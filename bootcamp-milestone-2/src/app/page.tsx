@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Content from "../components/content";
 import { Poppins } from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 
 const poppins = Poppins({ weight: "700", subsets: ["latin"] });
+const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export default function Home() {
     return (
@@ -16,10 +18,19 @@ export default function Home() {
                     )}>
                     Hi! I'm Matt.
                 </h1>
-                <p className="text-3xl font-base">
-                    I'm a developer who loves building solutions that help
-                    others.
-                </p>
+                <div className="flex items-center justify-center align-middle gap-3">
+                    <p className="text-3xl font-base">I'm a</p>
+                    <span
+                        className={twMerge(
+                            sourceCodePro.className,
+                            "bg-slate-300 px-2 text-2xl font-normal mt-[3px]"
+                        )}>
+                        &lt;/developer&gt;
+                    </span>
+                    <p className="text-3xl font-base">
+                        who loves building solutions that help others.
+                    </p>
+                </div>
             </div>
         </Content>
     );
