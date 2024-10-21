@@ -9,7 +9,7 @@ const Pattern = ({ multiplier }: { multiplier: number }) => {
     const bottom = `${32 + 170 * multiplier}px`;
     return (
         <div
-            className="absolute -z-10 w-full h-fit left-10 flex"
+            className="absolute -z-10 w-full h-fit left-12 flex"
             style={{ bottom: bottom }}>
             <div
                 className={twMerge(
@@ -44,6 +44,17 @@ const Background = () => {
                     times: [0, 0.5, 1],
                 }}
                 className="absolute bg-gradient-to-r to-transparent via-slate-100 from-transparent bg-size-200 bg-pos-0 w-full h-full -z-10"></motion.div>
+            <motion.div
+                animate={{
+                    backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+                }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 8,
+                    delay: 2,
+                    times: [0, 0.5, 1],
+                }}
+                className="absolute bg-gradient-to-b to-transparent via-slate-100/50 from-transparent bg-size-200 bg-pos-0 w-full h-full -z-10"></motion.div>
         </div>
     );
 };
