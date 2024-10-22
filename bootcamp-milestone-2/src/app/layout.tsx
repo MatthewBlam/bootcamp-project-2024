@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import MotionWrapper from "../components/motion-wrapper";
 import Background from "../components/background";
 import Navbar from "../components/navbar";
 
@@ -26,9 +27,11 @@ export default function RootLayout({
                     inter.className,
                     "bg-slate-100 text-slate-900 w-full h-full overflow-x-hidden overflow-y-scroll"
                 )}>
-                <Background></Background>
-                <Navbar></Navbar>
-                {children}
+                <MotionWrapper>
+                    <Background></Background>
+                    <Navbar></Navbar>
+                    {children}
+                </MotionWrapper>
             </body>
         </html>
     );

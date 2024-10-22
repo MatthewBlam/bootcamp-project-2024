@@ -54,7 +54,7 @@ const Background = () => {
                     delay: 2,
                     times: [0, 0.5, 1],
                 }}
-                className="absolute bg-gradient-to-b to-transparent via-slate-100/50 from-transparent bg-size-200 bg-pos-0 w-full h-full -z-10"></motion.div>
+                className="absolute bg-gradient-to-b to-transparent via-slate-100/40 from-transparent bg-size-200 bg-pos-0 w-full h-full -z-10"></motion.div>
         </div>
     );
 };

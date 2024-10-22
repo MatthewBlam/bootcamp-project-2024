@@ -8,6 +8,9 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            screens: {
+                sm: "650px",
+            },
             backgroundSize: {
                 "size-200": "200% 200%",
             },

@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <header
             id="navbar"
-            className="bg-gradient-to-b from-slate-100 to-transparent from-80% to-95% overflow-scroll select-none flex gap-10 justify-around sm:justify-between items-center px-12 pt-10 pb-6">
+            className="h-24 bg-gradient-to-b from-slate-100 to-transparent from-80% to-95% overflow-scroll select-none flex gap-10 justify-around sm:justify-between items-center px-12 pt-10 pb-6">
             <Link
                 href="/"
                 className="cursor-pointer font-semibold text-2xl hover:scale-110 hidden sm:block">
