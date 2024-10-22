@@ -18,7 +18,7 @@ export default function Home() {
                     )}>
                     Hi! I'm Matt.
                 </h1>
-                <div className="flex items-center justify-center align-middle gap-3">
+                <div className="flex flex-wrap items-center justify-center align-middle gap-3">
                     <p className="text-3xl font-base">I'm a</p>
                     <span
                         className={twMerge(
@@ -27,7 +27,7 @@ export default function Home() {
                         )}>
                         &lt;/developer&gt;
                     </span>
-                    <p className="text-3xl font-base">
+                    <p className="text-3xl font-base leading-[52px]">
                         who loves building solutions that help others.
                     </p>
                 </div>
