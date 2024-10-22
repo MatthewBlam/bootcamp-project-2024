@@ -5,3 +5,18 @@
 * {
     transition-duration: 0.2s;
 }
+
+.horizontal {
+    container-type: inline-size;
+}
+
+.horizontal div {
+    font-size: max(11.5cqw, 160px);
+}
+
+.mask {
+    mask-image: url("../../public/mask.png");
+    mask-repeat: no-repeat;
+    mask-size: 500px;
+    mask-position: 50% 50%;
+}
