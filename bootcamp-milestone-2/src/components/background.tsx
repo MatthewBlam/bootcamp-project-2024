@@ -87,6 +87,12 @@ const Wallpaper = ({
     );
 };
 
+/*
+
+The way the Background component is built may be confusing.
+It has two Wallpaper components
+
+*/
 const Background = () => {
     const { x, y } = useMousePosition();
     return (
