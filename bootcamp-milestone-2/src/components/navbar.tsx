@@ -1,42 +1,80 @@
+"use client";
+import { twMerge } from "tailwind-merge";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 
+const Navlink = ({
+    text,
+    link,
+    pathname,
+}: {
+    text: string;
+    link: string;
+    pathname: string;
+}) => {
+    const margin = text == "contact" ? "-mr-[0.22px]" : "mr-[0.2px]";
+    return (
+        <Link
+            href={link}
+            className="cursor-pointer hover:scale-[106%] flex gap-[1.5px] justify-center items-center">
+            <p
+                className={twMerge(
+                    margin,
+                    pathname == link
+                        ? "flex items-center align-middle"
+                        : "opacity-0 select-none flex items-center"
+                )}>
+                &lt;
+            </p>
+            {text}
+            <p
+                className={
+                    pathname == link
+                        ? "flex items-center align-middle"
+                        : "opacity-0 select-none flex items-center"
+                }>
+                &gt;
+            </p>
+        </Link>
+    );
+};
+
 const Navbar = () => {
+    const pathname = usePathname();
     return (
         <header
             id="navbar"
-            className="h-28 bg-gradient-to-b from-slate-100 to-transparent from-80% to-95% overflow-scroll select-none flex gap-10 justify-around sm:justify-between items-center px-12 pt-10 pb-12">
+            className="h-28 bg-gradient-to-b from-slate-100 to-transparent from-80% to-95% overflow-scroll select-none flex gap-10 justify-around md:justify-between items-center px-12 pt-10 pb-12">
             <Link
                 href="/"
-                className="cursor-pointer font-semibold text-2xl hover:scale-[113%] hidden sm:block">
+                className="cursor-pointer font-semibold text-2xl hover:scale-[113%] hidden md:block">
                 mb
             </Link>
-            <nav className="flex gap-8 md:gap-12 font-semibold text-base">
-                <Link href="/" className="cursor-pointer hover:scale-105">
-                    Home
-                </Link>
-                <Link
-                    href="/portfolio"
-                    className="cursor-pointer hover:scale-105">
-                    Portfolio
-                </Link>
-                <Link href="/resume" className="cursor-pointer hover:scale-105">
-                    Resume
-                </Link>
-                <Link href="/blogs" className="cursor-pointer hover:scale-105">
-                    Blogs
-                </Link>
-                <Link
-                    href="/contact"
-                    className="cursor-pointer hover:scale-105">
-                    Contact
-                </Link>
+            <nav className="flex gap-8 lg:gap-12 font-semibold text-base">
+                <Navlink text="home" link="/" pathname={pathname}></Navlink>
+                <Navlink
+                    text="portfolio"
+                    link="/portfolio"
+                    pathname={pathname}></Navlink>
+                <Navlink
+                    text="resume"
+                    link="/resume"
+                    pathname={pathname}></Navlink>
+                <Navlink
+                    text="blogs"
+                    link="/blogs"
+                    pathname={pathname}></Navlink>
+                <Navlink
+                    text="contact"
+                    link="/contact"
+                    pathname={pathname}></Navlink>
             </nav>
             <a
                 href="https://github.com/MatthewBlam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer hover:scale-[113%] hidden sm:block">
+                className="cursor-pointer hover:scale-[113%] hidden md:block">
                 <SiGithub className="size-[26px]"></SiGithub>
             </a>
         </header>

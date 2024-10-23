@@ -47,7 +47,7 @@ const Wallpaper = ({
             animate={{
                 WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
             }}
-            transition={{ type: "tween", ease: "backOut", duration: 0.3 }}
+            transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
             className={twMerge(
                 fade ? "text-slate-200/65" : "text-slate-300/50",
                 "w-full h-full absolute",

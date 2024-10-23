@@ -10,7 +10,7 @@ const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 export default function Home() {
     return (
         <Content>
-            <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center px-10">
+            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center px-10">
                 <h1
                     className={twMerge(
                         poppins.className,
