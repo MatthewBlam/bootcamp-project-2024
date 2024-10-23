@@ -45,10 +45,10 @@ const Navbar = () => {
     return (
         <header
             id="navbar"
-            className="h-28 bg-gradient-to-b from-slate-100 to-transparent from-80% to-95% overflow-scroll select-none flex gap-10 justify-around md:justify-between items-center px-12 pt-10 pb-12">
+            className="h-fit bg-gradient-to-b from-slate-100 to-transparent from-80% to-95% overflow-scroll select-none flex gap-10 justify-around md:justify-between items-center px-12 pt-9 pb-12">
             <Link
                 href="/"
-                className="cursor-pointer font-semibold text-2xl hover:scale-[113%] hidden md:block">
+                className="cursor-pointer font-semibold text-[24px] hover:scale-[113%] hidden md:block">
                 mb
             </Link>
             <nav className="flex gap-8 lg:gap-12 font-semibold text-base">

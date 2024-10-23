@@ -9,6 +9,7 @@ const config: Config = {
     theme: {
         extend: {
             screens: {
+                xs: "590px",
                 sm: "650px",
             },
             backgroundSize: {
