@@ -3,9 +3,16 @@ import { Lexend_Exa } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 
+import { usePathname } from "next/navigation";
 import useMousePosition from "../utils/useMousePosition";
+import { useEffect, useState } from "react";
 
 const lexendExa = Lexend_Exa({ weight: "600", subsets: ["latin"] });
+
+const variants = {
+    hidden: { opacity: 0 },
+    enter: { opacity: 1 },
+};
 
 const Pattern = ({ multiplier }: { multiplier: number }) => {
     const bottom = `${32 + 170 * multiplier}px`;
@@ -90,22 +97,44 @@ const Wallpaper = ({
 /*
 
 The way the Background component is built may be confusing.
-It has two Wallpaper components
+
+It has two Wallpaper components, one that has a looping gradient animation,
+another stacked on top that has a mask which is animated to follow the cursor (spotlight effect).
+
+The Background component is only visible in the home page.
+
 
 */
 const Background = () => {
+    const [hidden, setHidden] = useState(false);
+    const pathname = usePathname();
     const { x, y } = useMousePosition();
+    useEffect(() => {
+        if (pathname != "/") {
+            setHidden(true);
+        } else {
+            setHidden(false);
+        }
+    }, [pathname]);
     return (
-        <div
+        <motion.div
+            variants={variants}
+            initial={hidden ? "enter" : "hidden"}
+            animate={hidden ? "hidden" : "enter"}
+            transition={{
+                type: "linear",
+                duration: hidden ? 0.3 : 1,
+                delay: hidden ? 0 : 0.2,
+            }}
             id="background"
-            className="w-full h-full absolute top-0 left-0 -z-20">
+            className="w-full h-full absolute top-0 left-0 -z-20 transition-none">
             <Wallpaper fade={true} x={50} y={50}></Wallpaper>
             <Wallpaper
                 fade={false}
                 mask={true}
                 x={x ? x : 50}
                 y={y ? y : 50}></Wallpaper>
-        </div>
+        </motion.div>
     );
 };
 
