@@ -1,10 +1,20 @@
-import Image from "next/image";
+import {
+    ResumeContainer,
+    ResumeSection,
+    ResumeSectionEntry,
+} from "../../components/resume";
 import Content from "../../components/content";
 
 export default function Resume() {
     return (
         <Content>
-            <div>Hello resume</div>
+            <ResumeContainer
+                name="Matthew Blam"
+                contacts={[
+                    "Irvine, CA",
+                    "blammatthew@gmail.com",
+                    "https://github.com/MatthewBlam",
+                ]}></ResumeContainer>
         </Content>
     );
 }
