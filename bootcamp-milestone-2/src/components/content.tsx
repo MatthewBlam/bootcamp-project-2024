@@ -10,7 +10,7 @@ const variants = {
 const Content = ({ children }: { children: React.ReactNode }) => {
     return (
         <motion.main
-            className="px-14 py-14 relative transition-none w-full h-[calc(100%-120px)] overflow-y-scroll"
+            className="px-14 py-6 relative transition-none w-full h-[calc(100%-120px)] overflow-y-scroll"
             variants={variants}
             initial="hidden"
             animate="enter"

@@ -58,10 +58,6 @@ const Navbar = () => {
                     link="/portfolio"
                     pathname={pathname}></Navlink>
                 <Navlink
-                    text="resume"
-                    link="/resume"
-                    pathname={pathname}></Navlink>
-                <Navlink
                     text="blogs"
                     link="/blogs"
                     pathname={pathname}></Navlink>
