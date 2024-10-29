@@ -17,7 +17,7 @@ const Form = ({ className }: { className?: string }) => {
     return (
         <div
             className={twMerge(
-                "pointer-events-none max-w-[500px] px-4 w-full flex flex-col justify-center items-center gap-8",
+                "pointer-events-auto max-w-[500px] px-4 w-full flex flex-col justify-center items-center gap-8",
                 className
             )}>
             <Input
