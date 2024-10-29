@@ -8,7 +8,7 @@ const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export default function Home() {
     return (
-        <Content>
+        <Content scroll={true}>
             <div className="absolute top-[45%] xs:top-[40%] md:top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center px-10">
                 <h1
                     className={twMerge(

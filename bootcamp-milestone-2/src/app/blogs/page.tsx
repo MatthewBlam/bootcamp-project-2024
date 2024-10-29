@@ -3,7 +3,7 @@ import Content from "../../components/content";
 
 export default function Blogs() {
     return (
-        <Content>
+        <Content scroll={true}>
             <div>Hello blogs</div>
         </Content>
     );

@@ -3,7 +3,7 @@ import Content from "../../components/content";
 
 export default function Portfolio() {
     return (
-        <Content>
+        <Content scroll={true}>
             <div>Hello portfolio</div>
         </Content>
     );
