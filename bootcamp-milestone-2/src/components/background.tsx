@@ -15,7 +15,7 @@ const variants = {
 };
 
 const Pattern = ({ multiplier }: { multiplier: number }) => {
-    const bottom = `${32 + 170 * multiplier}px`;
+    const bottom = `${22 + 180 * multiplier}px`;
     return (
         <div
             className="horizontal flex justify-center absolute -z-10 w-[calc(100%-48px-48px)] h-fit left-12"
@@ -23,9 +23,9 @@ const Pattern = ({ multiplier }: { multiplier: number }) => {
             <div
                 className={twMerge(
                     "select-none text-nowrap leading-none",
-                    lexendExa.className
+                    "lexendExa.className font-extrabold tracking-wide"
                 )}>
-                Matthew Blam
+                MATTHEW BLAM
             </div>
         </div>
     );
