@@ -1,4 +1,4 @@
-import Content from "../components/content";
+import Content from "@/components/content";
 import { Poppins } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
 import { twMerge } from "tailwind-merge";

@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 
 import { usePathname } from "next/navigation";
-import useMousePosition from "../utils/useMousePosition";
+import useMousePosition from "@/utils/useMousePosition";
 import { useEffect, useState } from "react";
 
 const lexendExa = Lexend_Exa({ weight: "600", subsets: ["latin"] });

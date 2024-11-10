@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import MotionWrapper from "../components/motion-wrapper";
-import Background from "../components/background";
-import Navbar from "../components/navbar";
+import MotionWrapper from "@/components/motion-wrapper";
+import Background from "@/components/background";
+import Navbar from "@/components/navbar";
 
 import { twMerge } from "tailwind-merge";
 

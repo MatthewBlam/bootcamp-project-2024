@@ -54,8 +54,8 @@ const Navbar = () => {
             <nav className="flex gap-4 sm:gap-8 lg:gap-12 font-semibold text-base">
                 <Navlink text="home" link="/" pathname={pathname}></Navlink>
                 <Navlink
-                    text="portfolio"
-                    link="/portfolio"
+                    text="projects"
+                    link="/projects"
                     pathname={pathname}></Navlink>
                 <Navlink
                     text="blogs"

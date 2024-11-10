@@ -1,8 +1,8 @@
 "use client";
 import { useRef, LegacyRef } from "react";
 import { useMeasure } from "react-use";
-import Content from "../../components/content";
-import Form from "../../components/form";
+import Content from "@/components/content";
+import Form from "@/components/form";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function Contact() {
