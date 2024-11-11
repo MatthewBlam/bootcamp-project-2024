@@ -3,8 +3,10 @@ import Content from "@/components/content";
 import Project from "@/components/project";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { usePathname } from "next/navigation";
 
 export default function Portfolio() {
+    const pathname = usePathname();
     const [padding, setPadding] = useState("");
     useEffect(() => {
         function handleResize() {
@@ -13,13 +15,13 @@ export default function Portfolio() {
                 if (container.offsetHeight > 500) {
                     setPadding("");
                 } else {
-                    setPadding("pt-6");
+                    setPadding("pt-5");
                 }
         }
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    }, [pathname]);
 
     return (
         <Content scroll={true}>
