@@ -1,32 +1,29 @@
 "use client";
 import Content from "@/components/content";
 import Project from "@/components/project";
-import { useEffect, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { usePathname } from "next/navigation";
 
 export default function Portfolio() {
-    const pathname = usePathname();
+    const ref = useRef() as MutableRefObject<HTMLDivElement>;
     const [padding, setPadding] = useState("");
     useEffect(() => {
         function handleResize() {
-            const container = document.getElementById("projects");
-            if (container)
-                if (container.offsetHeight > 500) {
-                    setPadding("");
-                } else {
-                    setPadding("pt-5");
-                }
+            if (ref.current["offsetHeight"] > 600) {
+                setPadding("");
+            } else {
+                setPadding("pt-5");
+            }
         }
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [pathname]);
+    }, []);
 
     return (
         <Content scroll={true}>
             <div
-                id="projects"
+                ref={ref}
                 className={twMerge(
                     padding,
                     "flex justify-center items-center flex-wrap"
