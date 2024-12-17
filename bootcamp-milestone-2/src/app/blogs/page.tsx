@@ -1,43 +1,25 @@
-"use client";
 import Content from "@/components/content";
-import BlogPreview from "@/components/blog-preview";
-import blogs, { Blog } from "@/static/blogData";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
-import { twMerge } from "tailwind-merge";
+import connectDB from "@/database/db";
+import Blog from "@/database/blogSchema";
+import BlogLayout from "@/components/blog-layout";
 
-export default function Blogs() {
-    const ref = useRef() as MutableRefObject<HTMLDivElement>;
-    const [padding, setPadding] = useState("");
-    useEffect(() => {
-        function handleResize() {
-            if (ref.current["offsetHeight"] > 600) {
-                setPadding("");
-            } else {
-                setPadding("pt-14");
-            }
-        }
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+async function getBlogs() {
+    await connectDB();
+    try {
+        const blogs = await Blog.find().sort({ date: -1 }).orFail();
+        return blogs;
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
+}
+
+export default async function Blogs() {
+    const blogs = await getBlogs();
+    console.log(blogs);
     return (
         <Content scroll={true}>
-            <div
-                ref={ref}
-                className={twMerge(
-                    padding,
-                    "flex justify-center items-center gap-8 flex-wrap"
-                )}>
-                {blogs.map((blog: Blog) => (
-                    <BlogPreview
-                        key={blog.title + blog.slug}
-                        title={blog.title}
-                        description={blog.description}
-                        image={blog.image}
-                        imageAlt={blog.imageAlt}
-                        slug={blog.slug}></BlogPreview>
-                ))}
-            </div>
+            <BlogLayout blogs={blogs}></BlogLayout>
         </Content>
     );
 }
