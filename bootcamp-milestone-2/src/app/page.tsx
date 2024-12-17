@@ -3,7 +3,10 @@ import { Poppins } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 
-const poppins = Poppins({ weight: "700", subsets: ["latin"] });
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+});
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export default function Home() {
@@ -13,7 +16,7 @@ export default function Home() {
                 <h1
                     className={twMerge(
                         poppins.className,
-                        "text-[80px] leading-none mb-8 tracking-[0.02em]"
+                        "text-[80px] font-semibold leading-none mb-8 tracking-[0.02em]"
                     )}>
                     Hi! I'm Matt.
                 </h1>

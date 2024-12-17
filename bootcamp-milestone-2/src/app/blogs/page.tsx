@@ -7,7 +7,7 @@ async function getBlogs() {
     await connectDB();
     try {
         const blogs = await Blog.find().sort({ date: -1 }).orFail();
-        return blogs;
+        return JSON.parse(JSON.stringify(blogs));
     } catch (err) {
         console.log(err);
         return null;
@@ -16,7 +16,6 @@ async function getBlogs() {
 
 export default async function Blogs() {
     const blogs = await getBlogs();
-    console.log(blogs);
     return (
         <Content scroll={true}>
             <BlogLayout blogs={blogs}></BlogLayout>

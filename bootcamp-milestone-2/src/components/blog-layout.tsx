@@ -2,7 +2,6 @@
 import BlogPreview from "@/components/blog-preview";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
-// import { Blog } from "@/database/blogSchema";
 
 const BlogLayout = ({ blogs }: { blogs: any }) => {
     const ref = useRef() as MutableRefObject<HTMLDivElement>;
