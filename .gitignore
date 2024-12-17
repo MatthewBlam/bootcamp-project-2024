@@ -33,6 +33,7 @@ yarn-error.log*
 .env*.local
 .env
 *.env
+/bootcamp-milestone-2/.env
 
 # vercel
 .vercel
