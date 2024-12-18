@@ -6,8 +6,9 @@ import BlogLayout from "@/components/blog-layout";
 async function getBlogs() {
     await connectDB();
     try {
-        const blogs = await Blog.find().sort({ date: -1 }).orFail();
-        return JSON.parse(JSON.stringify(blogs));
+        const data = await Blog.find().sort({ date: -1 }).orFail();
+        const blogs = JSON.parse(JSON.stringify(data));
+        return blogs;
     } catch (err) {
         console.log(err);
         return null;

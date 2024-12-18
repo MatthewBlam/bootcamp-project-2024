@@ -6,8 +6,9 @@ import ProjectLayout from "@/components/project-layout";
 async function getProjects() {
     await connectDB();
     try {
-        const projects = await Project.find().orFail();
-        return JSON.parse(JSON.stringify(projects));
+        const data = await Project.find().orFail();
+        const projects = JSON.parse(JSON.stringify(data));
+        return projects;
     } catch (err) {
         console.log(err);
         return null;

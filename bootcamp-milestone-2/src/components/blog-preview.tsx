@@ -19,7 +19,7 @@ const BlogPreview = ({
 }) => {
     return (
         <a
-            href={slug}
+            href={`blogs/${slug}`}
             className="min-w-96 h-fit p-8 hover:bg-slate-200/50 rounded-xl">
             <div className="flex flex-col justify-center items-center gap-4">
                 <h3 className="text-lg font-semibold"> {title} </h3>

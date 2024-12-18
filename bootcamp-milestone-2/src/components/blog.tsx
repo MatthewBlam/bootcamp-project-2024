@@ -1,21 +1,8 @@
+"use client";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 
-const Blog = ({
-    className,
-    title,
-    date,
-    image,
-    imageAlt,
-    content,
-}: {
-    className?: string;
-    title: string;
-    date: string;
-    image: string;
-    imageAlt: string;
-    content: string;
-}) => {
+const Blog = ({ className, blog }: { className?: string; blog: any }) => {
     return (
         <div
             className={twMerge(
@@ -23,17 +10,19 @@ const Blog = ({
                 className
             )}>
             <Image
-                src={image}
+                src={blog.image}
                 className="rounded-xl"
                 width={300}
                 height={430}
-                alt={imageAlt}
+                alt={blog.imageAlt}
             />
             <div>
-                <h1 className="text-xl font-semibold">{title}</h1>
-                <h3 className="text-base font-medium">{date}</h3>
+                <h1 className="text-xl font-semibold">{blog.title}</h1>
+                <h3 className="text-base font-medium">
+                    {new Date(blog.date).toLocaleDateString()}
+                </h3>
                 <p className="text-base font-normal mt-4 mb-16 lg:mb-0">
-                    {content}
+                    {blog.content}
                 </p>
             </div>
         </div>

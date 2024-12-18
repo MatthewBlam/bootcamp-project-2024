@@ -21,7 +21,7 @@ const Navlink = ({
             <p
                 className={twMerge(
                     margin,
-                    pathname == link
+                    pathname.slice(0, 6) == link.slice(0, 6)
                         ? "flex items-center align-middle"
                         : "opacity-0 select-none flex items-center"
                 )}>
@@ -30,7 +30,7 @@ const Navlink = ({
             {text}
             <p
                 className={
-                    pathname == link
+                    pathname.slice(0, 6) == link.slice(0, 6)
                         ? "flex items-center align-middle"
                         : "opacity-0 select-none flex items-center"
                 }>

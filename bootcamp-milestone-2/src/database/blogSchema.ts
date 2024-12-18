@@ -8,6 +8,7 @@ type Blog = {
     image: string;
     imageAlt: string;
     slug: string;
+    content: string;
 };
 
 // Mongoose schema
@@ -18,6 +19,7 @@ const blogSchema = new Schema<Blog>({
     image: { type: String, required: true },
     imageAlt: { type: String, required: true },
     slug: { type: String, required: true },
+    content: { type: String, required: true },
 });
 
 // Defining the collection and model
