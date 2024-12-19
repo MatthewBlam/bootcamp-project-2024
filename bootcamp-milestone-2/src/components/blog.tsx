@@ -5,7 +5,7 @@ import Image from "next/image";
 import Comment from "./comment";
 import { IComment } from "@/database/blogSchema";
 import CommentForm from "./comment-form";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 function newComment(data: any) {
     return (

@@ -1,13 +1,10 @@
 "use client";
-import { Lexend_Exa } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 
 import { usePathname } from "next/navigation";
 import useMousePosition from "@/utils/useMousePosition";
 import { useEffect, useState } from "react";
-
-const lexendExa = Lexend_Exa({ weight: "600", subsets: ["latin"] });
 
 const variants = {
     hidden: { opacity: 0 },
@@ -42,7 +39,7 @@ const Wallpaper = ({
     y: number;
     fade: boolean;
 }) => {
-    let amount = [];
+    const amount = [];
     for (let i = 0; i < 21; i++) {
         amount.push(i);
     }

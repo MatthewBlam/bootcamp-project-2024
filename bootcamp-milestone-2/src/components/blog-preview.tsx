@@ -1,16 +1,12 @@
-"use client";
-import React, { useState } from "react";
 import Image from "next/image";
 
 const BlogPreview = ({
-    className,
     title,
     description,
     image,
     imageAlt,
     slug,
 }: {
-    className?: string;
     title: string;
     description: string;
     image: string;

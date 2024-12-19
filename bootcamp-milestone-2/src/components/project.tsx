@@ -7,16 +7,12 @@ const Project = ({
     title,
     description,
     link,
-    width,
-    height,
 }: {
     className?: string;
     img: string;
     title: string;
     description: string;
     link: string;
-    width?: number;
-    height?: number;
 }) => {
     return (
         <div

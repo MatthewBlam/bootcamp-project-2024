@@ -33,7 +33,7 @@ export default function ProjectLayout({ projects }: { projects: any }) {
                           img={project.img}
                           title={project.title}
                           description={project.description}
-                          link={projects.link}></Project>
+                          link={project.link}></Project>
                   ))
                 : ""}
         </div>
