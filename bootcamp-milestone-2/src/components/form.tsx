@@ -9,10 +9,39 @@ const Form = ({ className }: { className?: string }) => {
     const [nameValue, setNameValue] = useState("");
     const [emailValue, setEmailValue] = useState("");
     const [messageValue, setMessageValue] = useState("");
-    function submit() {
+    const [disabled, setDisabled] = useState(false);
+    async function handleSubmit(name: string, email: string, message: string) {
+        if (name == "" || email == "" || message == "") {
+            alert("Error: All fields must be entered");
+            return;
+        }
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message,
+                }),
+            });
+
+            if (!response.ok) {
+                alert(`Response: ${response.status}`);
+                alert("Error: please try resubmitting the form");
+            } else {
+                alert("Message sent!");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Error: please try resubmitting the form");
+        }
         setNameValue("");
         setEmailValue("");
         setMessageValue("");
+        setDisabled(false);
     }
     return (
         <div
@@ -40,9 +69,11 @@ const Form = ({ className }: { className?: string }) => {
                 setValue={setMessageValue}></Textarea>
             <Button
                 className="z-10 pointer-events-auto"
+                disabled={disabled}
                 text="Submit"
                 onClick={() => {
-                    submit();
+                    setDisabled(true);
+                    handleSubmit(nameValue, emailValue, messageValue);
                 }}></Button>
         </div>
     );
