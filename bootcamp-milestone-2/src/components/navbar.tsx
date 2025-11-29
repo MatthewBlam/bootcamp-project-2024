@@ -58,10 +58,6 @@ const Navbar = () => {
                     link="/projects"
                     pathname={pathname}></Navlink>
                 <Navlink
-                    text="blogs"
-                    link="/blogs"
-                    pathname={pathname}></Navlink>
-                <Navlink
                     text="contact"
                     link="/contact"
                     pathname={pathname}></Navlink>
